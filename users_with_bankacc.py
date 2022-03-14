@@ -1,25 +1,25 @@
 class BankAccount: 
     bank_name= "Bank of Plumbob"
 
-    def __init__(self, name, int_rate, balance=0): 
+    def __init__(self, name, int_rate): #removed balance cuz account is deifned by a class 
         self.name= name
         self.int_rate= int_rate
-        self.balance= balance
+        self.account= BankAccount(int_rate=0.02,balance=0)# this is the class
 
     def deposit(self, amount):
-        self.balance += amount
+        self.account += amount #balance changed to account
         return self
     
     def withdraw(self, amount):
-        self.balance -= amount
+        self.account -= amount #balance changed to account
         return self
     
     def display_account_info(self):
-        print (f"Name:{self.name} Balance:{self.balance}")
+        print (f"Name:{self.name} Balance:{self.account}") #balance changed to account
         return self
     
     def yield_interest(self):
-        self.balance += (self.balance*self.int_rate)
+        self.account += (self.account*self.int_rate) #balance shanged to account
         print(self.display_account_info())
         return self
         
